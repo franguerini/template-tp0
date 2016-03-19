@@ -21,10 +21,9 @@ public class RegExGenerator {
             }
         };
     }
-
+/*
     private String generateString(String regEx) {
         String  string = "";
-        int afterPos=0;
         for(int i=0;i<regEx.length();){
             RegExChar charType = characterType(regEx.charAt(i));
             charType.generateSubString(regEx,i);
@@ -33,14 +32,27 @@ public class RegExGenerator {
         }
         return string;
     }
+/*/
+    private String generateString(String regEx){
+        int regSize = regEx.length();
+        int i=0;
+        String outString = "";
+        for (i=0;i<regSize;){
+            RegExChar charType = characterType(regEx.charAt(i));
+            charType.generateSubString(regEx,i);
+            outString = outString + charType.getGeneratedString();
+            i=charType.getNewPosition();
+        }
+        return outString;
+    }
 
     private RegExChar characterType(char c) {
         if(c=='\\') return new Literal();
         if(c=='.') return new Dot();
-        if(c=='*') return new Asterisk();
+        if(c=='[') return new Bracket();
         if(c=='+') return new Plus();
         if(c=='?') return new QuestionMark();
-        if(c=='[') return new Bracket();
+        if(c=='*') return new Asterisk();
         return new Letter();
     }
 }

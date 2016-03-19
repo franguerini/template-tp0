@@ -5,8 +5,9 @@ package ar.fiuba.tdd.template.tp0;
  */
 abstract public class RegExChar {
 
-    protected String generatedString;
+    protected String generatedString = "";
     protected int newPosition;
+    protected Cuantifier cuantifier = new Cuantifier();
 
     public abstract void generateSubString(String regEx, int i);
 

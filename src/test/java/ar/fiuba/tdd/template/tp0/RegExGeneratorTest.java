@@ -42,6 +42,11 @@ public class RegExGeneratorTest {
     }
 
     @Test
+    public void testMultipleCharactersAndPlusAtEnd() {
+        assertTrue(validate("...+", 1));
+    }
+
+    @Test
     public void testLiteral() {
         assertTrue(validate("\\@", 1));
     }
@@ -58,6 +63,9 @@ public class RegExGeneratorTest {
 
     @Test
     public void testLiteralSetOfLetters() { assertTrue(validate("AAABBBDDKEsdjlaj1345hfaj", 1));}
+
+    @Test
+    public void testLiteralSetOfLettersAndPlus() { assertTrue(validate("AAABBB+", 1));}
 
     @Test
     public void testZeroOrOneCharacter() { assertTrue(validate("\\@.h?", 1));}
@@ -77,4 +85,18 @@ public class RegExGeneratorTest {
         assertTrue(validate("[abc]+", 1));
     }
 
+    @Test
+    public void testCharacterSetWithQuantifiersBetweenSets() {
+        assertTrue(validate("[abc]+[xcv]*[asdfghjk]?", 1));
+    }
+
+    @Test
+    public void testAsterikAfterLiteral() {
+        assertTrue(validate("AAABc*p8*", 1));
+    }
+
+    @Test
+    public void testLiteralQuestionmark3options(){
+        assertTrue(validate("K?fsdfs?342?",3));
+    }
 }

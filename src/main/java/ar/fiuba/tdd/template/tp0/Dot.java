@@ -9,18 +9,16 @@ public class Dot extends RegExChar {
 
 
     public void generateSubString(String regEx, int i) {
-        Cuantifier cuantifier = new Cuantifier();
         int repetition = 1;
-        char nextChar = '\0';
-        if(i+1<regEx.length()){
-            nextChar = regEx.charAt(i+1);
-            repetition = cuantifier.getRepetition(nextChar);
-        }
         Random rand = new Random();
-        for(int j=0;j<repetition;j++){
-            generatedString = "" + (char) rand.nextInt(256);
+        generatedString = "";
+        if(i+1!=regEx.length()) {
+            repetition = cuantifier.getRepetition(regEx.charAt(i + 1));
         }
-        newPosition = i + 1;
 
+        for(int j=0;j<repetition;j++){
+            generatedString = generatedString + (char) rand.nextInt(256);
+        }
+        this.newPosition = i + 1;
     }
 }
