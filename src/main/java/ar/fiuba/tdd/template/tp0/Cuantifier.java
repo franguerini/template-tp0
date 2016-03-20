@@ -10,8 +10,8 @@ public class Cuantifier {
 
     public int getRepetition(char c) {
         Random rand = new Random();
-        if(c=='*'){
-          return rand.nextInt(MAXREPETITION);
+        if(c=='*') {
+            return rand.nextInt(MAXREPETITION);
         }
         if(c=='?'){
             return rand.nextInt(1);

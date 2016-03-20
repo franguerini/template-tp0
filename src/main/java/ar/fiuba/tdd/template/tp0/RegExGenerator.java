@@ -21,18 +21,7 @@ public class RegExGenerator {
             }
         };
     }
-/*
-    private String generateString(String regEx) {
-        String  string = "";
-        for(int i=0;i<regEx.length();){
-            RegExChar charType = characterType(regEx.charAt(i));
-            charType.generateSubString(regEx,i);
-            string = string + charType.getGeneratedString();
-            i=charType.getNewPosition();
-        }
-        return string;
-    }
-/*/
+
     private String generateString(String regEx){
         int regSize = regEx.length();
         int i=0;
