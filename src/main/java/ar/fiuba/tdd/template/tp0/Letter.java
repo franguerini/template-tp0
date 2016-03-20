@@ -9,12 +9,10 @@ public class Letter extends RegExChar {
 
     public void generateSubString(String regEx, int pos) {
         int repetition = 1;
-        Random rand = new Random();
-        generatedString = "";
-        if(pos + 1 != regEx.length()) {
+        if (pos + 1 != regEx.length()) {
             repetition = cuantifier.getRepetition(regEx.charAt(pos + 1));
         }
-        for(int repeTimes = 0; repeTimes < repetition ; repeTimes++) {
+        for (int repeTimes = 0; repeTimes < repetition ; repeTimes++) {
             generatedString = generatedString + regEx.charAt(pos);
         }
         this.newPosition = pos + 1;

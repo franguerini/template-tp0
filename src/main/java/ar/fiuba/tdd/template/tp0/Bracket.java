@@ -10,7 +10,6 @@ public class Bracket extends RegExChar {
 
     public void generateSubString(String regEx, int pos) {
         String groupString = "";
-        Random random = new Random();
         int repetition = 1;
         int groupPos = 0;
         for (groupPos = pos + 1 ; regEx.charAt(groupPos) != ']' ; groupPos++) {
