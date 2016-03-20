@@ -62,15 +62,18 @@ public class RegExGeneratorTest {
 
     @Test
     public void testLiteralSetOfLetters() {
-        assertTrue(validate("AAABBBDDKEsdjlaj1345hfaj", 1));}
+        assertTrue(validate("AAABBBDDKEsdjlaj1345hfaj", 1));
+    }
 
     @Test
     public void testLiteralSetOfLettersAndPlus() {
-        assertTrue(validate("AAABBB+", 1));}
+        assertTrue(validate("AAABBB+", 1));
+    }
 
     @Test
     public void testZeroOrOneCharacter() {
-        assertTrue(validate("\\@.h?", 1));}
+        assertTrue(validate("\\@.h?", 1));
+    }
 
     @Test
     public void testCharacterSet() {
