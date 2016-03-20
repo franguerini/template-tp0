@@ -9,13 +9,13 @@ abstract public class RegExChar {
     protected int newPosition = 0;
     protected Cuantifier cuantifier = new Cuantifier();
 
-    public abstract void generateSubString(String regEx, int i);
+    public abstract void generateSubString(String regEx, int pos);
 
     public int getNewPosition() {
         return newPosition;
     }
 
-    public String getGeneratedString(){
+    public String getGeneratedString() {
         return generatedString;
     }
 

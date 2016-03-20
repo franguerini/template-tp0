@@ -8,15 +8,15 @@ import java.util.Random;
 public class Cuantifier {
     private static final int MAXREPETITION = 10;
 
-    public int getRepetition(char c) {
+    public int getRepetition(char character) {
         Random rand = new Random();
-        if(c=='*') {
+        if (character == '*') {
             return rand.nextInt(MAXREPETITION);
         }
-        if(c=='?'){
+        if (character == '?') {
             return rand.nextInt(1);
         }
-        if(c=='+'){
+        if (character == '+') {
             return rand.nextInt(MAXREPETITION) + 1;
         }
         return 1;

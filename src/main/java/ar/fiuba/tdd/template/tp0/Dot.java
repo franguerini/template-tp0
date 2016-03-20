@@ -8,17 +8,17 @@ import java.util.Random;
 public class Dot extends RegExChar {
 
 
-    public void generateSubString(String regEx, int i) {
+    public void generateSubString(String regEx, int pos) {
         int repetition = 1;
         Random rand = new Random();
         generatedString = "";
-        if(i+1!=regEx.length()) {
-            repetition = cuantifier.getRepetition(regEx.charAt(i + 1));
+        if( pos + 1 != regEx.length()) {
+            repetition = cuantifier.getRepetition(regEx.charAt(pos + 1));
         }
 
-        for(int j=0;j<repetition;j++){
+        for(int j = 0 ; j < repetition ; j++) {
             generatedString = generatedString + (char) rand.nextInt(256);
         }
-        this.newPosition = i + 1;
+        this.newPosition = pos + 1;
     }
 }

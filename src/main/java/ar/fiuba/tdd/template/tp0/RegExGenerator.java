@@ -15,7 +15,7 @@ public class RegExGenerator {
     public List<String> generate(String regEx, int numberOfResults) {
         return new ArrayList<String>() {
             {
-               for(int i=0;i<numberOfResults;i++){
+               for (int cant = 0 ; cant < numberOfResults ; cant++) {
                    add(generateString(regEx));
                }
             }
@@ -24,24 +24,24 @@ public class RegExGenerator {
 
     private String generateString(String regEx){
         int regSize = regEx.length();
-        int i=0;
+        int pos = 0;
         String outString = "";
-        for (i=0;i<regSize;){
-            RegExChar charType = characterType(regEx.charAt(i));
-            charType.generateSubString(regEx,i);
+        for (pos = 0 ; pos < regSize ; ) {
+            RegExChar charType = characterType(regEx.charAt(pos));
+            charType.generateSubString(regEx, pos);
             outString = outString + charType.getGeneratedString();
-            i=charType.getNewPosition();
+            pos = charType.getNewPosition();
         }
         return outString;
     }
 
-    private RegExChar characterType(char c) {
-        if(c=='\\') return new Literal();
-        if(c=='.') return new Dot();
-        if(c=='[') return new Bracket();
-        if(c=='+') return new Plus();
-        if(c=='?') return new QuestionMark();
-        if(c=='*') return new Asterisk();
+    private RegExChar characterType(char character) {
+        if (character == '\\') return new Literal();
+        if (character == '.') return new Dot();
+        if (character == '[') return new Bracket();
+        if (character == '+') return new Plus();
+        if (character == '?') return new QuestionMark();
+        if (character == '*') return new Asterisk();
         return new Letter();
     }
 }

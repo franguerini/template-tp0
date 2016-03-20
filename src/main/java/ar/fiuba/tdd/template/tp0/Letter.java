@@ -7,16 +7,16 @@ import java.util.Random;
  */
 public class Letter extends RegExChar {
 
-    public void generateSubString(String regEx, int i) {
+    public void generateSubString(String regEx, int pos) {
         int repetition = 1;
         Random rand = new Random();
         generatedString = "";
-        if(i+1!=regEx.length()) {
-            repetition = cuantifier.getRepetition(regEx.charAt(i + 1));
+        if(pos + 1 != regEx.length()) {
+            repetition = cuantifier.getRepetition(regEx.charAt(pos + 1));
         }
-        for(int j=0;j<repetition;j++){
-            generatedString = generatedString + regEx.charAt(i);
+        for(int repeTimes = 0; repeTimes < repetition ; repeTimes++) {
+            generatedString = generatedString + regEx.charAt(pos);
         }
-        this.newPosition = i + 1;
+        this.newPosition = pos + 1;
     }
 }

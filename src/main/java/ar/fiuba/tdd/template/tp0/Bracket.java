@@ -8,24 +8,21 @@ import java.util.Random;
  */
 public class Bracket extends RegExChar {
 
-    public void generateSubString(String regEx, int i) {
+    public void generateSubString(String regEx, int pos) {
         String groupString = "";
-        int repetition = 1;
-        int j=0;
-        for(j=i+1;regEx.charAt(j)!=']';j++){
-            groupString = groupString + regEx.charAt(j);
-        }
-
-        if(j+1!=regEx.length()) {
-            repetition = cuantifier.getRepetition(regEx.charAt(j + 1));
-        }
-
-
         Random random = new Random();
-        for (int k=0;k<repetition;k++) {
+        int repetition = 1;
+        int groupPos = 0;
+        for (groupPos = pos + 1 ; regEx.charAt(groupPos) != ']' ; groupPos++) {
+            groupString = groupString + regEx.charAt(groupPos);
+        }
+        if (groupPos + 1 != regEx.length()) {
+            repetition = cuantifier.getRepetition(regEx.charAt(groupPos + 1));
+        }
+        for (int repeTimes = 0 ; repeTimes < repetition ; repeTimes++) {
             int randPos = random.nextInt(groupString.length());
             generatedString = generatedString + groupString.charAt(randPos);
         }
-        newPosition = j + 1;
+        newPosition = groupPos + 1;
     }
 }
