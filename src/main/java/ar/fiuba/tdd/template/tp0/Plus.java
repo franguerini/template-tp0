@@ -14,7 +14,7 @@ public class Plus extends RegExChar {
     }
 
 
-    protected int assignRepetition(char c) {
+    protected int assignRepetition() {
         repetition = random.nextInt(MAX_REPETITION - 1) + 1;
         return repetition;
     }

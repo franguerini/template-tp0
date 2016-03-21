@@ -21,7 +21,7 @@ public class Letter extends RegExChar {
         newPosition = pos + 1;
     }
 
-    protected int assignRepetition(char c) {
+    protected int assignRepetition() {
         return repetition;
     }
 }

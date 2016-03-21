@@ -7,14 +7,16 @@ import java.util.Hashtable;
  */
 public class Identifier {
 
-    private static final Hashtable<Character,RegExChar> hashCharacter = new Hashtable<Character,RegExChar>() {{
-        put('+', new Plus());
-        put('*', new Asterisk());
-        put('?', new QuestionMark());
-        put('.', new Dot());
-        put('\\', new Literal());
-        put('[', new Bracket());
-    }};
+    private static final Hashtable<Character,RegExChar> hashCharacter = new Hashtable<Character,RegExChar>() {
+        {
+            put('+', new Plus());
+            put('*', new Asterisk());
+            put('?', new QuestionMark());
+            put('.', new Dot());
+            put('\\', new Literal());
+            put('[', new Bracket());
+        }
+    };
 
     RegExChar characterType(char character) {
         RegExChar regExChar = hashCharacter.get(character);

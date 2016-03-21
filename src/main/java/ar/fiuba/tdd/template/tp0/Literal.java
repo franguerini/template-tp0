@@ -14,7 +14,7 @@ public class Literal extends RegExChar {
         newPosition = pos + 2;
     }
 
-    protected int assignRepetition(char c) {
+    protected int assignRepetition() {
         return repetition;
     }
 }

@@ -28,12 +28,12 @@ abstract class RegExChar {
     }
     public void calculateRepetitionNextChar(String regEx, int pos) {
         if (pos + 1 != regEx.length()) {
-            repetition = assignRepetition(regEx.charAt(pos + 1));
+            repetition = assignRepetition();
         }
         else {
             repetition = 1;
         }
     }
 
-    protected abstract int assignRepetition(char c);
+    protected abstract int assignRepetition();
 }

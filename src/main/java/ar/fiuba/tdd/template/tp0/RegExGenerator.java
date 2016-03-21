@@ -17,7 +17,7 @@ public class RegExGenerator {
             {
                 for (int cant = 0 ; cant < numberOfResults ; cant++) {
                     add(generateString(regEx));
-               }
+                }
             }
         };
     }

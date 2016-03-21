@@ -9,7 +9,7 @@ public class QuestionMark extends RegExChar {
         this.newPosition = pos + 1;
     }
 
-    protected int assignRepetition(char c) {
+    protected int assignRepetition() {
         repetition = random.nextInt(1);
         return 0;
     }

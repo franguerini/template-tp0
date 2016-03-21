@@ -31,7 +31,7 @@ public class Bracket extends RegExChar {
         newPosition = groupPos + 1;
     }
 
-    protected int assignRepetition(char c) {
+    protected int assignRepetition() {
         return repetition;
     }
 }

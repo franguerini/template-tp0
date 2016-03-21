@@ -13,7 +13,7 @@ public class Asterisk extends RegExChar {
         this.newPosition = pos + 1;
     }
 
-    protected int assignRepetition(char c) {
+    protected int assignRepetition() {
         repetition = random.nextInt(MAX_REPETITION);
         return repetition;
     }
