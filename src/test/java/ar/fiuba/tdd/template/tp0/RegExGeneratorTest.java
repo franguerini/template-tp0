@@ -101,7 +101,7 @@ public class RegExGeneratorTest {
     }
 
     @Test
-    public void testLiteralQuestionmark3options(){
+    public void testLiteralQuestionmark3options() {
         assertTrue(validate("K?fsdfs?342?",3));
     }
 }

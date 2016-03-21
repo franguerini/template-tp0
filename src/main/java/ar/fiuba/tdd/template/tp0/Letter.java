@@ -8,13 +8,12 @@ import java.util.Random;
 public class Letter extends RegExChar {
 
     public void generateSubString(String regEx, int pos) {
-        int repetition = 1;
-        if (pos + 1 != regEx.length()) {
-            repetition = cuantifier.getRepetition(regEx.charAt(pos + 1));
-        }
+        repetition = cuantifier.getRepetition(regEx, pos);
+
         for (int repeTimes = 0; repeTimes < repetition ; repeTimes++) {
             generatedString = generatedString + regEx.charAt(pos);
         }
+
         this.newPosition = pos + 1;
     }
 }

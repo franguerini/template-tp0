@@ -10,6 +10,7 @@ abstract class RegExChar {
     protected String generatedString = "";
     protected int newPosition = 0;
     protected Cuantifier cuantifier = new Cuantifier();
+    protected int repetition = 1;
     protected Random random = new Random();
 
     public abstract void generateSubString(String regEx, int pos);
@@ -18,8 +19,6 @@ abstract class RegExChar {
         return newPosition;
     }
 
-    public String getGeneratedString() {
-        return generatedString;
-    }
+    public String getGeneratedString() {return generatedString;}
 
 }
