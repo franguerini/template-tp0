@@ -19,6 +19,8 @@ abstract class RegExChar {
         return newPosition;
     }
 
-    public String getGeneratedString() {return generatedString;}
+    public String getGeneratedString() {
+        return generatedString;
+    }
 
 }
