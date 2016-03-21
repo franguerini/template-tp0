@@ -1,29 +1,26 @@
 package ar.fiuba.tdd.template.tp0;
 
+import java.util.Hashtable;
+
 /**
  * Created by gg on 3/20/2016.
  */
 public class Identifier {
 
+    private static final Hashtable<Character,RegExChar> hashCharacter = new Hashtable<Character,RegExChar>() {{
+        put('+', new Plus());
+        put('*', new Asterisk());
+        put('?', new QuestionMark());
+        put('.', new Dot());
+        put('\\', new Literal());
+        put('[', new Bracket());
+    }};
+
     RegExChar characterType(char character) {
-        if (character == '\\') {
-            return new Literal();
+        RegExChar regExChar = hashCharacter.get(character);
+        if(regExChar == null){
+            return new Letter();
         }
-        if (character == '.') {
-            return new Dot();
-        }
-        if (character == '[') {
-            return new Bracket();
-        }
-        if (character == '+') {
-            return new Plus();
-        }
-        if (character == '?') {
-            return new QuestionMark();
-        }
-        if (character == '*') {
-            return new Asterisk();
-        }
-        return new Letter();
+        return regExChar;
     }
 }

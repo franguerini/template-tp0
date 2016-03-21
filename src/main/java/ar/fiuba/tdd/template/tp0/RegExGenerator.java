@@ -27,6 +27,7 @@ public class RegExGenerator {
         int pos = 0;
         Identifier identifier = new Identifier();
         String outString = "";
+
         for (pos = 0 ; pos < regSize ; ) {
             RegExChar charType = identifier.characterType(regEx.charAt(pos));
             charType.generateSubString(regEx, pos);
