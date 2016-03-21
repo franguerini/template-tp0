@@ -7,9 +7,10 @@ import java.util.Random;
  */
 public class Letter extends RegExChar {
 
-    public Letter(){
+    public Letter() {
         repetition = 1;
     }
+
     public void generateSubString(String regEx, int pos) {
 
         this.calculateRepetitionNextChar(regEx, pos);

@@ -26,6 +26,7 @@ abstract class RegExChar {
     public String getGeneratedString() {
         return generatedString;
     }
+
     public void calculateRepetitionNextChar(String regEx, int pos) {
         if (pos + 1 != regEx.length()) {
             repetition = assignRepetition();

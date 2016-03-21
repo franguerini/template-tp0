@@ -5,7 +5,7 @@ package ar.fiuba.tdd.template.tp0;
  */
 public class Dot extends RegExChar {
 
-    public Dot(){
+    public Dot() {
         repetition = 1;
     }
 

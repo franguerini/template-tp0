@@ -20,7 +20,7 @@ public class Identifier {
 
     RegExChar characterType(char character) {
         RegExChar regExChar = hashCharacter.get(character);
-        if(regExChar == null){
+        if (regExChar == null) {
             return new Letter();
         }
         return regExChar;

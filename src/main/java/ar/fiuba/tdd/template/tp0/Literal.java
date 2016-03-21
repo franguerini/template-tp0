@@ -5,7 +5,7 @@ package ar.fiuba.tdd.template.tp0;
  */
 public class Literal extends RegExChar {
 
-    public Literal(){
+    public Literal() {
         repetition = 1;
     }
 
