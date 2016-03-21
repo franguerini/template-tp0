@@ -14,6 +14,6 @@ public class Letter extends RegExChar {
             generatedString = generatedString + regEx.charAt(pos);
         }
 
-        this.newPosition = pos + 1;
+        newPosition = pos + 1;
     }
 }
