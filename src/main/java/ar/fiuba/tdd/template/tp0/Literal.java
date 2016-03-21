@@ -5,12 +5,10 @@ package ar.fiuba.tdd.template.tp0;
  */
 public class Literal extends RegExChar {
 
-    public Literal() {
-        repetition = 1;
-    }
 
     public void generateSubString(String regEx, int pos) {
-        generatedString = "" + regEx.charAt(pos + 1);
+        this.initialize();
+        generatedString.append(regEx.charAt(pos + 1));
         newPosition = pos + 2;
     }
 

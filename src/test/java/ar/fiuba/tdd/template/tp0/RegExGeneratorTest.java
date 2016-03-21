@@ -11,7 +11,7 @@ import static org.junit.Assert.assertTrue;
 public class RegExGeneratorTest {
 
     private boolean validate(String regEx, int numberOfResults) {
-        RegExGenerator generator = new RegExGenerator(20);
+        RegExGenerator generator = new RegExGenerator();
         List<String> results = generator.generate(regEx, numberOfResults);
         Pattern pattern = Pattern.compile("^" + regEx + "$");
         return results

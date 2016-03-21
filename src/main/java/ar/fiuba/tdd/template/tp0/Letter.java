@@ -7,18 +7,13 @@ import java.util.Random;
  */
 public class Letter extends RegExChar {
 
-    public Letter() {
-        repetition = 1;
-    }
-
     public void generateSubString(String regEx, int pos) {
 
+        this.initialize();
         this.calculateRepetitionNextChar(regEx, pos);
-
         for (int repeTimes = 0; repeTimes < repetition ; repeTimes++) {
-            generatedString = generatedString + regEx.charAt(pos);
+            generatedString.append(regEx.charAt(pos));
         }
-
         newPosition = pos + 1;
     }
 

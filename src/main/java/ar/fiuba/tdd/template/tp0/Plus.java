@@ -5,10 +5,6 @@ package ar.fiuba.tdd.template.tp0;
  */
 public class Plus extends RegExChar {
 
-    public Plus() {
-        repetition = 1;
-    }
-
     public void generateSubString(String regEx, int pos) {
         this.newPosition = pos + 1;
     }

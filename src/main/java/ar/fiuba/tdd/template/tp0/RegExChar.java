@@ -8,7 +8,7 @@ import java.util.Random;
 abstract class RegExChar {
 
     protected static final int MAX_REPETITION = 10;
-    protected String generatedString = "";
+    protected StringBuilder generatedString = new StringBuilder();
     protected int newPosition = 0;
     protected int repetition = 1;
     protected Random random = new Random();
@@ -24,17 +24,21 @@ abstract class RegExChar {
     }
 
     public String getGeneratedString() {
-        return generatedString;
+        return generatedString.toString();
     }
 
     public void calculateRepetitionNextChar(String regEx, int pos) {
         if (pos + 1 != regEx.length()) {
             repetition = assignRepetition();
-        }
-        else {
+        } else {
             repetition = 1;
         }
     }
 
     protected abstract int assignRepetition();
+
+    protected void initialize() {
+        generatedString.delete(0, generatedString.length());
+        repetition = 1;
+    }
 }

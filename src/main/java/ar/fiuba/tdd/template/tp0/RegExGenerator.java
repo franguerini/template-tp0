@@ -6,12 +6,6 @@ import java.util.List;
 
 public class RegExGenerator {
 
-    private int maxLength;
-
-    public RegExGenerator(int maxLength) {
-        this.maxLength = maxLength;
-    }
-
     public List<String> generate(String regEx, int numberOfResults) {
         return new ArrayList<String>() {
             {
@@ -26,15 +20,15 @@ public class RegExGenerator {
         int regSize = regEx.length();
         int pos = 0;
         Identifier identifier = new Identifier();
-        String outString = "";
+        StringBuilder outString = new StringBuilder();
 
         for (pos = 0 ; pos < regSize ; ) {
             RegExChar charType = identifier.characterType(regEx.charAt(pos));
             charType.generateSubString(regEx, pos);
-            outString = outString + charType.getGeneratedString();
+            outString.append(charType.getGeneratedString());
             pos = charType.getNewPosition();
         }
-        return outString;
+        return outString.toString();
     }
 
 }
